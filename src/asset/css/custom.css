@@ -204,6 +204,7 @@
 /* Services area */
 .bg-service{
     background-color: black;
+    padding-bottom: 25px;
 }
 .box{
     
@@ -211,6 +212,7 @@
    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
    transition: all ease-in-out 0.5s;
    background: #1a1814;
+  
    
 }
 .box:hover{
@@ -257,4 +259,21 @@
   }
    .box:hover h3, .box:hover p {
     color: #fff;
+  }
+
+
+  /* Analysis area */
+
+.bg-analysis{
+     background-color: rgb(189, 187, 187); 
+     padding-bottom: 25px; 
+}
+  .tech-title{
+      color:#e2a233 ;
+      margin-bottom: 35px;
+     
+  }
+  .analysis-content{
+      font-size: 18px;
+      text-align: justify;
   }
