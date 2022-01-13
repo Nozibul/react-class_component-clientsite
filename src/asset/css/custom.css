@@ -265,11 +265,11 @@
   /* Analysis area */
 
 .bg-analysis{
-     background-color: rgb(189, 187, 187); 
-     padding-bottom: 25px; 
+     /* background-color: rgb(214, 212, 212);  */
+     padding-bottom: 35px; 
 }
   .tech-title{
-      color:#e2a233 ;
+      color:#f7a10c ;
       margin-bottom: 35px;
      
   }
@@ -277,3 +277,65 @@
       font-size: 18px;
       text-align: justify;
   }
+
+
+  /* summary section start */
+  .summary{
+    background-image: url("../images/summary.jpg");
+    min-height: 350px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+
+}
+
+.summaryOverlay{
+    position: absolute;
+    min-height: 350px;
+    width: 100%;
+    background:rgba(0, 0, 0, 0.7);
+}
+
+.countNumber{
+    font-size: 45px;
+    font-weight: 700;
+    color: #db9112;
+ 
+}
+.countTitle{
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff; 
+}
+.countSection{
+    margin-top: 17%;
+
+}
+
+.cardTitle{
+    font-family: 600;
+    font-size: 22px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+.cardContent{
+    font-family: 400;
+    font-size: 18px;
+    color: #000000;
+    margin: 5px;
+    text-align: left;
+}
+.countCard{
+    padding: 10px;
+    margin-top: 17%;
+    width: 300px;
+}
+.cardIcon{
+    color:rgb(47, 47, 158);
+    font-size: 16px;
+}
+
+
