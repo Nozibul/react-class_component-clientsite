@@ -30,7 +30,7 @@ export default class Analysis extends Component {
       <Fragment>
         <div className=" bg-analysis">
           <Container className="text-center">
-            <h1 className="pt-5 tech-title">Used Technology</h1>
+            <h2 className="pt-5">Used <small>Technology</small></h2>
             <Row>
               <Col style={{height:"350px"}} lg={6} md={12} sm={12}>
                 <ResponsiveContainer width="100%" height="100%">

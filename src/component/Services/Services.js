@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component} from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import web from '../../asset/images/web.png' ;
 import design from '../../asset/images/design.png' ;
