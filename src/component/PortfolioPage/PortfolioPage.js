@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { Button, Col, Container, Row } from "react-bootstrap";
 import web1 from "../../asset/images/web.png";
 import design1 from "../../asset/images/design.png";
 import app1 from "../../asset/images/app1.png";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-class RecentProjects extends Component {
-  render() {
-    return (
-      <>
-        <Container className="projectSection">
+class PortfolioPage extends Component {
+    render() {
+        return (
+            <>
+             <Container className="projectSection">
           <h2>
             Recent <small>Our</small> Projects
           </h2>
@@ -27,7 +27,7 @@ class RecentProjects extends Component {
                 <img src={design1} alt="" />
                 <h5 className="mt-2">Web Development</h5>
                 <p className="mt-2">Adipisicing elit. Nesciunt expedita voluptatibus, voluptates asperiores.</p>
-               <Link to="/projectsDetails" className="detailBtn">Details</Link>
+                <Link to="/projectsDetails" className="detailBtn">Details</Link>
               </div>
             </Col>
             <Col sm={12} md={6} lg={4} className="mb-3">
@@ -40,9 +40,10 @@ class RecentProjects extends Component {
             </Col>
           </Row>
         </Container>
-      </>
-    );
-  }
+                
+            </>
+        );
+    }
 }
 
-export default RecentProjects;
+export default PortfolioPage;

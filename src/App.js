@@ -1,24 +1,19 @@
-import Analysis from "./component/Analysis/Analysis";
-import Course from "./component/Course/Course";
-import RecentProjects from "./component/RecentProjects/RecentProjects";
-// import Header from "./component/Header/Header";
-import Services from "./component/Services/Services";
-import Summary from "./component/Summary/Summary";
-import TopBanner from "./component/TopBanner/TopBanner";
 
-function App() {
+import React from 'react';
+import {
+  BrowserRouter
+ 
+} from "react-router-dom";
+import AppRoute from './Routes/AppRoute';
+
+
+const App = () => {
   return (
-    <div>
-     
-     <TopBanner />
-     <Services />
-     <Analysis />
-     <Summary />
-     <RecentProjects />
-     <Course />
-
-    </div>
+    <BrowserRouter>
+       <AppRoute />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
+

@@ -3,6 +3,8 @@ import { Col, Container, Row } from 'react-bootstrap';
 import web from '../../asset/images/web.png' ;
 import design from '../../asset/images/design.png' ;
 import app from '../../asset/images/app1.png' ;
+import Style from '../CommonStyle/CommonStyle';
+
 
 export default class Services extends Component {
    
@@ -11,9 +13,9 @@ export default class Services extends Component {
         return (
             <div className="bg-service">              
                  <Container className="pt-5 pb-4 ">
-                    <h2 className='services-head'>Our Services</h2>
+                    <h2 className='services-head'>Our <small style={{color:Style.spanColor}}>Services</small></h2>
                     <Row>
-                        <Col lg={4} md={6} sm={12} >
+                        <Col lg={4} md={6} sm={12} className="p-3">
                             <div className='box text-center'>
                                 <div className='ser-img'>
                                   <img className="services-img" src={web} alt="" />
@@ -25,7 +27,7 @@ export default class Services extends Component {
                                </p>
                             </div>
                         </Col>
-                        <Col  lg={4} md={6} sm={12}>
+                        <Col  lg={4} md={6} sm={12} className="p-3">
                           <div className='box text-center'>
                           <div className='ser-img'>
                                   <img className="services-img" src={design} alt="" />
@@ -37,7 +39,7 @@ export default class Services extends Component {
                             </p>
                           </div>
                         </Col>
-                        <Col  lg={4} md={6} sm={12} >
+                        <Col  lg={4} md={6} sm={12} className="p-3">
                           <div className='box text-center'>
                           <div className='ser-img'>
                                   <img className="services-img" src={app} alt="" />

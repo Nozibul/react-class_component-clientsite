@@ -3,17 +3,21 @@ import '../../asset/css/custom.css';
 import { Nav, Navbar, } from 'react-bootstrap'
 import logo from "../../asset/images/logo.jpg"
 import scroll from "../../asset/images/logo2.jpg"
+import { NavLink } from 'react-router-dom';
 
 export default class Header extends Component {    
  
-    constructor(){     //scroll korar age and pore alada kisu dekhbo sejonno amra constructor create korbo.state change er madhome amra css class k change korbo
-        super();                         // then parent class er super constructor ka call korte hobe avebe.
-        this.state={                    //then akta state create korlam
-            topBanner:"nav-title" ,     // navbarer er title er akta name dilam then value hisebe css class name ta dilam cotetion e.
-            topBannerLogo: [logo],      // state er moddhe object rakte 3rd braket er moddhe object ta likhte hobe.
+    constructor(props){
+        super();                         
+        this.state={                    
+            topBanner:"nav-title" ,    
+            topBannerLogo: [logo],  
+            navVariant: "light",    
             navBackground: "nav-bg" ,
-            navMenu: "menu-item"
-        }                               // topBanner k neche jekhae amra kaj korbo sekhane dilam.
+            navMenu: "menu-item",
+            pageTitle:props.title
+          
+        }                              
     }
 
  // scroll korar sathe sathe menu property ta change korte scrollListener create korte hobe.
@@ -22,7 +26,7 @@ export default class Header extends Component {
        // ar upore gele scroll ta thakhon window scroll less than 100 thake.
 
        if(window.scrollY>100){   // state er property change korar jonno amra setState use kori
-          this.setState({ topBanner:"nav-titleScroll", topBannerLogo:[scroll], navBackground:"nav-bgScroll", navMenu:"menu-itemScroll"})
+          this.setState({navVariant:"dark", topBanner:"nav-titleScroll", topBannerLogo:[scroll], navBackground:"nav-bgScroll", navMenu:"menu-itemScroll"})
        }
        else if(window.scrollY<100){
            this.setState({topBanner:"nav-title", topBannerLogo:[logo], navBackground:"nav-bg", navMenu:"menu-item"})
@@ -38,24 +42,33 @@ export default class Header extends Component {
        window.addEventListener("scroll",this.onScroll) // "scroll"ata holo eventListener er type, then kon evenetListener ta call korte chassi seta dia dibo
    }
 
-
     render() {
+        
+        const navLinkStyle=({isActive})=>{
+            return {
+                color: isActive ? "#daaa57" : "" ,
+                borderBottom: isActive ? "2px solid #dfaa4f" : "",
+                fontWeight: isActive ? "bold" : "",
+               
+            };
+        }
         return (
             <Fragment>
-              <Navbar fixed="top" collapseOnSelect expand="lg" className={this.state.navBackground}>
+                <title>{this.state.pageTitle}</title>
+              <Navbar variant={this.state.navVariant} fixed="top" collapseOnSelect expand="lg" className={this.state.navBackground}>
               
-                 <img className="menu-logo" src={this.state.topBannerLogo} alt="" />   
+                <img className="menu-logo" src={this.state.topBannerLogo} alt="" />   
                 <Navbar.Brand className={this.state.topBanner} href="#home">IT Solution</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                  
                     <Nav className="ms-auto me-5">
-                        <Nav.Link className={this.state.navMenu} href="#">Home</Nav.Link>
-                        <Nav.Link className={this.state.navMenu} href="#">Services</Nav.Link>
-                        <Nav.Link className={this.state.navMenu} href="#">Courses</Nav.Link>
-                        <Nav.Link className={this.state.navMenu} href="#">Portfolio</Nav.Link>
-                        <Nav.Link className={this.state.navMenu} href="#">About</Nav.Link>
-                        <Nav.Link className={this.state.navMenu} href="#">Contact</Nav.Link>
+                        <Nav.Link> <NavLink style={navLinkStyle} className={this.state.navMenu} to="/">Home</NavLink></Nav.Link>
+                        <Nav.Link> <NavLink style={navLinkStyle} className={this.state.navMenu} to="/services">Services</NavLink></Nav.Link>
+                        <Nav.Link> <NavLink style={navLinkStyle} className={this.state.navMenu} to="/courses">Courses</NavLink></Nav.Link>
+                        <Nav.Link> <NavLink style={navLinkStyle} className={this.state.navMenu} to="/portfolio">Portfolio</NavLink> </Nav.Link> 
+                        <Nav.Link> <NavLink style={navLinkStyle} className={this.state.navMenu} to="/contact">Contact</NavLink> </Nav.Link> 
+                        <Nav.Link> <NavLink style={navLinkStyle} className={this.state.navMenu} to="/about">About</NavLink> </Nav.Link> 
                    
                     </Nav>
                 </Navbar.Collapse>

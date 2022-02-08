@@ -4,7 +4,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 // import './topBanner.css'
 import { Col, Container, Row } from 'react-bootstrap'
-import Header from '../Header/Header';
+
 
 export default class TopBanner extends Component {
     render() {
@@ -13,7 +13,7 @@ export default class TopBanner extends Component {
             <Fragment >
                       
                 <Container fluid className="topBanner p-0">
-                <Header />
+                
                   <div className="bannerOverlay">
                       <Container>
                           <Row>

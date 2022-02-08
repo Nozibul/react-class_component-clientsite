@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 import service1 from '../../asset/images/service-image-1.jpg'
 import service2 from '../../asset/images/service-image-2.jpg'
@@ -7,11 +8,11 @@ import service3 from '../../asset/images/service-image-3.jpg';
 import Style from '../CommonStyle/CommonStyle';
 
 
-class Course extends Component {
+ class AllCourses extends Component {
   render() {
     return (
-      <>
-        <Container className="courseSection">
+       <>
+         <Container className="courseSection">
           <h2 className="mt-3 mb-5">
            <small style={{color:Style.spanColor}}>Our</small> Courses
           </h2>
@@ -53,7 +54,7 @@ class Course extends Component {
                 <Col lg={6} sm={12} md={6}>
                   <h5 className="mt-3">Web Development</h5>
                   <p>I Build native and cross platform for your business of your Business. </p>
-                  <a className="mt-5" className="courseDetails" href="">Details</a>
+                  <Link className="courseDetails" href="">Details</Link>
               </Col>
               </Row>
             </Col>
@@ -73,9 +74,8 @@ class Course extends Component {
             </Col>
           </Row>
         </Container>
-      </>
+       </> 
     );
   }
 }
-
-export default Course;
+export default AllCourses;
